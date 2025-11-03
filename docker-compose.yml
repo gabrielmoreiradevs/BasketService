@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  mongo:
+    container_name: mongodb
+    image: mongo:4
+    environment:
+      MONGO_DATA_DIR: /data/db
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+
+  redis:
+    image: redis
+    container_name: redis
+    command: ["redis-server", "--requirepass", "sa"]
+    ports:
+        - "6379:6379"
+
+volumes:
+  mongo_data:
