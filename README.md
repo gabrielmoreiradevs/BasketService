@@ -118,7 +118,7 @@ Abaixo estão os principais endpoints disponíveis para interagir com o `BasketS
 Cria um carrinho vazio e retorna o `basketId`.
 
   * **Método:** `POST`
-  * **URL:** `/baskets`
+  * **URL:** `/basket`
   * **Resposta (Exemplo):**
     ```json
     {
@@ -132,8 +132,8 @@ Cria um carrinho vazio e retorna o `basketId`.
 
 Adiciona um produto e uma quantidade ao carrinho. O `productId` é validado contra a API externa.
 
-  * **Método:** `POST`
-  * **URL:** `/baskets/{basketId}/items`
+  * **Método:** `PUT`
+  * **URL:** `/basket/{basketId}/`
   * **Corpo da Requisição (Exemplo):**
     ```json
     {
@@ -147,7 +147,7 @@ Adiciona um produto e uma quantidade ao carrinho. O `productId` é validado cont
 Retorna o conteúdo completo do carrinho, com os dados dos produtos buscados da `fakestoreapi.com`.
 
   * **Método:** `GET`
-  * **URL:** `/baskets/{basketId}`
+  * **URL:** `/basket/{basketId}`
   * **Resposta (Exemplo):**
     ```json
     {
@@ -164,19 +164,12 @@ Retorna o conteúdo completo do carrinho, com os dados dos produtos buscados da 
     }
     ```
 
-### 4\. Remover Item do Carrinho
-
-Remove um item específico (baseado no `productId`) do carrinho.
-
-  * **Método:** `DELETE`
-  * **URL:** `/baskets/{basketId}/items/{productId}`
-
 ### 5\. Limpar Carrinho
 
 Remove todos os itens de um carrinho.
 
   * **Método:** `DELETE`
-  * **URL:** `/baskets/{basketId}/clear`
+  * **URL:** `/basket/{basketId}`
 
 -----
 
