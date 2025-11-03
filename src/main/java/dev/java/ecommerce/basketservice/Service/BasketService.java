@@ -82,4 +82,9 @@ public class BasketService {
         existingBasket.calculateTotalPrice();
         return basketRepository.save(existingBasket);
     }
+
+    public void deleteBasket(String id) {
+        Basket existingBasket = getBasketById(id);
+        basketRepository.delete(existingBasket);
+    }
 }
