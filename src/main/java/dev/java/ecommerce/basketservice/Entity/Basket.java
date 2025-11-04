@@ -30,6 +30,9 @@ public class Basket {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private PaymentMethod paymentMethod;
 
+    public Basket(String basketId123, String clientId123, double v, Object o, Status status) {
+    }
+
     public void calculateTotalPrice() {
         this.totalPrice = products.stream()
                 .map(product -> product.getPrice().multiply(BigDecimal.valueOf(product.getQuantity())))
